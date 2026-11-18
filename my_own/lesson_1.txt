@@ -1,0 +1,109 @@
+note: this my own summary, not for AI
+
+Part 1 
+AI, ML, Deep Learning, aur Generative AI mein kya farq hai
+
+Artificial Intelligence, Machine Learning, Deep Learning, aur LLMs — Asal Mein Kya Hain?
+
+1   Artificial Intelligence (AI)
+
+Simple definition: Machines ko is tarah program karna ke woh aise kaam karein jo normally insaan ki "intelligence" maangta hai.
+
+2  Machine Learning (ML)
+
+Simple definition: AI ka woh subset jahan hum machine ko explicitly rules nahi likhte — balke hum usse data se seekhne dete hain.
+
+3 Deep Learning
+
+Simple definition: Machine Learning ka woh subset jo Neural Networks use karta hai — especially deep (bahut saari layers wali) neural networks.
+
+4  Generative AI
+
+Simple definition: AI jo naya content create kar sake — text, image, audio, video, code.
+
+Generative AI = Deep Learning ka ek powerful application
+
+
+Part 2
+LLM kya hota hai aur yeh andar se kaise kaam karta hai
+
+LLM = Large Language Model
+
+Yeh ek bahut bada neural network hai jo:
+
+Internet se aaye trillions of text documents par train hua hai
+Ek kaam mein expert hai: agli word predict karna
+
+Haan, itna simple hai concept — lekin is simple kaam se bahut powerful cheez emerge hoti hai.
+matlab yeh hai ke ChatGPT ya koi bhi LLM (Large Language Model) asal mein aik bohat hi samajhdar "Next-Word Guesser" (agla lafz andaza lagane wala system) hai, bilkul aap ke mobile keyboard ki tarah, lekin hazaron guna zyada taqatwar.
+process autoregressive generation kehlaati hai.
+Is ka seedha matlab hai: "Pichle lafz ko dekh kar agla lafz jorna
+
+
+Part 3: Neural Networks
+
+Neural Network computer ke andar banaya gaya ek aisa software system hai jo bilkul insaani dimagh (Human Brain) ke kaam karne ke tareeqay ki naqal karta hai, taake computer khud misalon se seekh kar faislay le sake.
+
+
+
+Part 4: Parameters aur Model Weights
+
+Parameters = Model ke andar ke numbers
+
+Jab hum kehte hain "GPT-4 has 1.8 trillion parameters" ya "Llama 3 is a 70B model" — to yeh in numbers ki count hai.
+
+Yeh numbers training ke doran adjust hote hain taake model better predictions kare.
+
+Analogy: Socho ek expert doctor ke dimaag mein medical knowledge store hai. Us knowledge ko agar numbers mein express karein — to woh uske "parameters" hain. Jitna zyada experience, utne better parameters.
+
+
+Transformer Architecture — Brief Overview
+
+2017 mein Google ne ek paper publish kiya: "Attention Is All You Need"
+
+Is paper ne ek naya architecture introduce kiya: Transformer
+
+Yeh architecture itna powerful nikla ke aaj ke almost sare LLMs isi par based hain — GPT, Claude, Gemini, Llama, sab.
+
+Transformer ka key innovation: Attention Mechanism
+
+Jab model text process karta hai, to woh har word ko equally nahi dekhta. Woh attention deta hai — yani kuch words zyada important hain context ke liye.
+ransformer AI ke dimagh ka woh naya design (naksha) hai jis ne AI ko poora jumla (sentence) ek saath padhne aur har lafz ka asli matlab (context) samajhne ki taqat di, aur isi wajah se aaj ChatGPT, Claude, aur Gemini itne samajhdar hain.
+• Transformer. AI ke dimagh ka woh modern design jo poore text ko ek saath padhta hai.
+• Attention. AI ki woh salahiyat jis se woh jumle ke ahem alfaaz par focus karke un ka aapas mein rishta aur asli matlab samajhta hai.
+
+Part 6: Training vs Inference
+Training aur Inference AI ki zindagi ke do alag-alag marhale (stages) hain: "Training" ka matlab hai AI ko padha-likha kar tayyar karna (Imtehan ki tayyari), aur "Inference" ka matlab hai us tayyar-shuda AI se asli kaam lena ya sawalon ke jawab poochhna (Imtehan dena).
+
+
+
+Model 2 
+Context Window** kisi model ki short-term memory (RAM) hai. Yeh woh maximum tokens ki tadaad hai jo model ek hi waqt mein dekh sakta hai (Input + Output milakar).
+
+• Top-P pehle bekaar options ko list se kaat kar bahar karta hai (taake AI koi ajeeb lafz na bole).
+• Temperature phir bache hue achay options mein se mood ke mutabiq ek lafz chunta hai.
+(Asal zindagi ka tip: Developers dono ko ek saath nahi chhedte—ya to Temperature badalte hain aur Top-P ko 1.0 rehne dete hain, ya Top-P badalte hain)
+
+Model 3
+• Zero-Shot: Koi misal nahi, seedha sawal (AI tukka lagayega).
+• One-Shot: 1 misal dikha kar sawal poochhna (AI ko thora ishara mil gaya).
+• Few-Shot: 2-3 misalein dikha kar sawal poochhna (AI bilkul pakka aur sahi format mein jawab dega).
+
+Prompt Injection Attack woh chalaaki hai jis mein user apne sawal ke andar chhupe hue hukam (commands) likh kar AI ko us ke asli malik ke rules (System Prompt) todne par majboor karta hai.
+Delimiters aik "Pinjra" (Boundary) banate hain jo AI ko saaf batata hai ke "Is dabbe ke andar likhi har cheez sirf customer ka data hai, isay hukam (command) samajh kar mat manna
+
+
+Model 4
+
+**Structured Output** ka matlab yeh guarantee lena hai ke AI ka response **hamesha valid JSON** hoga jo hamare tay-shuda Schema ko follow karega.
+Function Calling
+AI khud aap ke database mein ja kar kuch check nahi kar sakta, balkay woh sirf aap ki app ko ek "Order Slip" (JSON) likh kar deta hai ke "Bhai mujhe yeh function chala kar is ka jawab la do"—aur asli kaam aap ka Python code ya n8n khud karta hai.
+
+# 📝 J. Lesson Summary
+- **Structured Output (JSON):** Software APIs ke sath baat karne ke liye lazmi hai.
+- **Pydantic:** Schema validation aur type safety provide karta hai.
+- **Function Calling:** LLM faisla karta hai aur arguments generate karta hai; Python application function ko physically execute karti hai.
+
+
+moduel 7
+aap ko apna software code is tarah banana chahiye ke woh kisi ek AI company (jaise sirf Groq ya sirf OpenAI) ka ghulam na bane, balkay aap ek "Universal Plug (Adapter)" banayein taake zaroorat padne par sirf ek setting badal kar poori app ko Groq se Ollama ya ChatGPT par shift kiya ja sake.
